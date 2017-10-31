@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p User List
+
+  table(width="800px")
+    thead
+      tr(bgcolor='#428BCA')
+        th UserId
+        th User Name
+        th First Name
+        th Last Name
+    tbody
+       - var i = -1
+       each item in rows
+        - ++i
+        tr(bgcolor=(i % 2 == 0) ? '#C8E1EF' : '#eeeeee')
+          td= item.UserId
+          td= item.userName
+          td= item.firstName
+          td= item.lastName

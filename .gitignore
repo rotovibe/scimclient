@@ -1,0 +1,16 @@
+# Environment files
+.env
+
+# Build files
+dist/
+
+# NPM packages
+node_modules/
+
+# IDE files
+.idea
+.vscode
+
+# Other
+.DS_store
+npm-debug.log

@@ -1,0 +1,80 @@
+{
+    "schemas": ["urn:scim:schemas:core:1.0", "urn:scim:schemas:extension:enterprise:1.0", "urn:scim:schemas:extension:custom:1.0"],
+    "id": "2819c223-7f76-453a-919d-413861904646", // transaction id
+    "externalId": "701984", // optional external id
+    "userName": "Ihyt.Peng@example.com",
+    "name": {
+        "formatted": "Ihyt Peng",
+        "familyName": "Ihyt",
+        "givenName": "Peng"
+    },
+    "displayName": "Ihyt Peng",
+    "nickName": "Hyt",
+    "emails": [{
+        "value": "Ihyt.Peng@example.com",
+        "type": "work",
+        "primary": true
+    }],
+    "userType": "Client Admin",
+    "active": true,
+    "urn:scim:schemas:extension:enterprise:1.0": {
+        "organization": "orgid203" // this will be a vbc foundation tenant id.
+    },
+    "urn:scim:schemas:extension:custom:1.0": {
+        "role": "axe handler", // simple type
+        "roles": [ // simple multi valued
+            "axe handler",
+            "care manager",
+            "admin"
+        ],
+        "superAdmin": { // complex type
+            "division": "CNYCC",
+            "first": "james",
+            "last": "roots"
+        },
+        "superAdmins": [ // complex multi valued
+            {
+                "division": "CNYCC",
+                "first": "james",
+                "last": "roots"
+            },
+            {
+                "division": "CNYCC",
+                "first": "Jessica",
+                "last": "Martin"
+            }
+        ]
+    }
+}
+
+
+
+
+/* {
+    "schemas": ["urn:scim:schemas:core:1.0", "urn:scim:schemas:extension:enterprise:1.0"],
+    "id": "2819c223-7f76-453a-919d-413861904646",
+    "externalId": "701984",
+    "userName": "Ihyt.Peng@example.com",
+    "name": {
+        "formatted": "Ihyt Peng",
+        "familyName": "Ihyt",
+        "givenName": "Peng"
+    },
+    "displayName": "Ihyt Peng",
+    "nickName": "Hyt",
+    "emails": [{
+        "value": "Ihyt.Peng@example.com",
+        "type": "work",
+        "primary": true
+    }],
+    "userType": "Client Admin",
+    "active": true,
+    "urn:scim:schemas:extension:enterprise:1.0": {
+        "organization": "orgid203"
+    },
+    "meta": {
+        "created": "2010-01-23T04:56:22Z",
+        "lastModified": "2011-05-13T04:42:34Z",
+        "version": "W\/\"3694e05e9dff591\""
+    }
+} */
