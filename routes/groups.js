@@ -35,18 +35,34 @@ router.get('/:groupId?', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
-    console.log('request body' + JSON.stringify(req.body.userName));
+    console.log('request body' + JSON.stringify(req.body.displayName));
 
-    grp.insertGroup(req.body, (err, result) => {
+    res.statusCode = 201;
+    res.set('Location', req.get('host') + req.baseUrl + '/' + 12345);
+    res.json({
+        "schemas": ["urn:scim:schemas:core:1.0"],
+        "id": "e9e30dba-f08f-4109-8486-d5c6a331660a",
+        "displayName": "Tour Guides",
+        "members": [{
+            "value": "2819c223-7f76-453a-919d-413861904646",
+            "display": "Babs Jensen"
+        }],
+        "meta": {
+            "created": new Date(),
+            "lastModified": new Date(),
+            "version": "W\/\"3694e05e9dff591\""
+        }
+    });
+    /* grp.insertGroup(req.body, (err, result) => {
         if (err) {
             res.json(err);
         } else {
-            var payload = SCIM.formatResponse(result.insertId, req.body, responseJson);
+            var payload = SCIM.formatGroupResponse(result.insertId, req.body, responseJson);
             res.statusCode = 201;
             res.set('Location', req.get('host') + req.baseUrl + '/' + result.insertId);
             res.json(payload);
         }
-    });
+    }); */
 })
 
 module.exports = router;

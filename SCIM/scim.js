@@ -28,6 +28,12 @@ var scim = {
         tmp.meta.created = new Date();
         tmp.meta.lastModified = new Date();
         return temp;
+    },
+    formatGroupResponse: (id, data, temp) => {
+        var tmp = temp;
+        tmp.meta.created = new Date();
+        tmp.meta.lastModified = new Date();
+        return temp;
     }
 };
 

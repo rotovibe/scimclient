@@ -20,7 +20,7 @@ var group = {
                 }; */
 
         //return db.query('INSERT INTO `Atmosphere`.`User` SET ?', post, callback);
-        return;
+        return callback;
     }
 };
 
